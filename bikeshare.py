@@ -2,6 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
+#create a dictionary to map data file to city name
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -75,7 +76,7 @@ def load_data(city, month, day):
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         #get the index of month in months which convert month from string to int
         month = months.index(month) + 1
-        df = df[df.month == month]
+        df = df[df['month'] == month]
     return df
 
     # filter by day of week
